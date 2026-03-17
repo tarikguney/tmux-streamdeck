@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0f23"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="windowGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4FC3F7"/>
+      <stop offset="100%" stop-color="#0288D1"/>
+    </linearGradient>
+    <linearGradient id="paneGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#81C784"/>
+      <stop offset="100%" stop-color="#388E3C"/>
+    </linearGradient>
+    <linearGradient id="sessionGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFB74D"/>
+      <stop offset="100%" stop-color="#F57C00"/>
+    </linearGradient>
+    <linearGradient id="miscGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CE93D8"/>
+      <stop offset="100%" stop-color="#8E24AA"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="200" rx="12" fill="url(#bg)"/>
+  <rect width="800" height="200" rx="12" fill="none" stroke="#2a2a4a" stroke-width="1"/>
+
+  <!-- Stream Deck key row -->
+  <!-- Key 1: new-window (blue) -->
+  <g transform="translate(60, 55)">
+    <rect width="56" height="56" rx="10" fill="#16213e" stroke="#2a2a4a" stroke-width="1"/>
+    <g transform="translate(12, 12) scale(1.6)">
+      <rect x="3" y="4" width="14" height="12" rx="2" fill="rgba(79,195,247,0.15)" stroke="url(#windowGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="10" y1="7.5" x2="10" y2="12.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      <line x1="7.5" y1="10" x2="12.5" y2="10" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Key 2: split-h (green) -->
+  <g transform="translate(126, 55)">
+    <rect width="56" height="56" rx="10" fill="#16213e" stroke="#2a2a4a" stroke-width="1"/>
+    <g transform="translate(12, 12) scale(1.6)">
+      <rect x="3" y="4" width="14" height="12" rx="2" fill="rgba(129,199,132,0.15)" stroke="url(#paneGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="10" y1="4.5" x2="10" y2="15.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 1.5"/>
+    </g>
+  </g>
+
+  <!-- Key 3: pane-right (green) -->
+  <g transform="translate(192, 55)">
+    <rect width="56" height="56" rx="10" fill="#16213e" stroke="#2a2a4a" stroke-width="1"/>
+    <g transform="translate(12, 12) scale(1.6)">
+      <rect x="3" y="4" width="14" height="12" rx="2" fill="rgba(129,199,132,0.15)" stroke="url(#paneGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="10" y1="4" x2="10" y2="16" stroke="url(#paneGrad)" stroke-width="1.5" stroke-linecap="round"/>
+      <polyline points="11.5,7.5 14.5,10 11.5,12.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Key 4: kill-session (orange) -->
+  <g transform="translate(258, 55)">
+    <rect width="56" height="56" rx="10" fill="#16213e" stroke="#2a2a4a" stroke-width="1"/>
+    <g transform="translate(12, 12) scale(1.6)">
+      <rect x="5" y="3" width="13" height="10" rx="2" fill="rgba(255,183,77,0.1)" stroke="url(#sessionGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="2" y="6" width="13" height="10" rx="2" fill="rgba(255,183,77,0.15)" stroke="url(#sessionGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="6" y1="9" x2="11" y2="13.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      <line x1="11" y1="9" x2="6" y2="13.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Key 5: command-prompt (purple) -->
+  <g transform="translate(324, 55)">
+    <rect width="56" height="56" rx="10" fill="#16213e" stroke="#2a2a4a" stroke-width="1"/>
+    <g transform="translate(12, 12) scale(1.6)">
+      <rect x="2" y="4" width="16" height="12" rx="2" fill="rgba(206,147,216,0.15)" stroke="url(#miscGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="5,8 8,10 5,12" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="10" y1="12" x2="15" y2="12" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Title text -->
+  <text x="430" y="72" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">tmux</text>
+  <text x="430" y="105" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="300" fill="#888888">for Stream Deck</text>
+
+  <!-- Subtitle -->
+  <text x="430" y="138" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#555555">20 actions  |  Windows + macOS  |  CLI &amp; Keystroke modes</text>
+
+  <!-- Category legend -->
+  <g transform="translate(60, 132)">
+    <circle cx="6" cy="6" r="4" fill="url(#windowGrad)"/>
+    <text x="16" y="10" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#666">Window</text>
+    <circle cx="76" cy="6" r="4" fill="url(#paneGrad)"/>
+    <text x="86" y="10" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#666">Pane</text>
+    <circle cx="130" cy="6" r="4" fill="url(#sessionGrad)"/>
+    <text x="140" y="10" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#666">Session</text>
+    <circle cx="200" cy="6" r="4" fill="url(#miscGrad)"/>
+    <text x="210" y="10" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#666">Misc</text>
+  </g>
+</svg>
