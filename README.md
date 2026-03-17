@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Stream_Deck_SDK-v2-blue?style=flat-square" alt="SDK v2"/>
+  <img src="https://img.shields.io/badge/Stream_Deck_SDK-v3-blue?style=flat-square" alt="SDK v3"/>
   <img src="https://img.shields.io/badge/Node.js-20-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node 20"/>
   <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT License"/>
