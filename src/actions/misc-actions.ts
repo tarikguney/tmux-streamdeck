@@ -23,6 +23,7 @@ export class CommandPromptAction extends TmuxAction {
       defaultKeystroke: ":",
       category: "misc",
       displayName: "Command Prompt",
+      keystrokeOnly: true,
     });
   }
 }
