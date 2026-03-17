@@ -7,6 +7,7 @@ export type TmuxActionSettings = {
   socketPath?: string;
   targetSession?: string;
   useWsl?: boolean;
+  keystrokeOnly?: boolean;
   [key: string]: string | boolean | undefined;
 };
 

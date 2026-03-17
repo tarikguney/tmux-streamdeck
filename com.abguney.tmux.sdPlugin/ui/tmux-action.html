@@ -95,9 +95,26 @@
       .info-btn.active .info-popup {
         display: block;
       }
+      .admin-notice {
+        background: #3a3520;
+        border: 1px solid #6b5c28;
+        border-radius: 4px;
+        color: #d4c46a;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 8px 12px;
+        margin: 4px 10px 8px;
+      }
     </style>
   </head>
   <body>
+    <input type="hidden" setting="keystrokeOnly" />
+
+    <div id="adminNotice" class="admin-notice hidden">
+      If your terminal runs as Administrator, Stream Deck must also run as Administrator for keystroke simulation to work.
+    </div>
+
     <sdpi-item label="Multiplexer">
       <div class="field-row">
         <sdpi-select setting="multiplexer">
@@ -204,6 +221,7 @@
       const commandMethodItem = document.getElementById("commandMethodItem");
       const cliSection = document.getElementById("cliSection");
       const keystrokeOnlyNotice = document.getElementById("keystrokeOnlyNotice");
+      const keystrokeOnlyInput = document.querySelector('[setting="keystrokeOnly"]');
 
       function setKeystrokeOnly() {
         commandMethodItem.classList.add("hidden");
@@ -211,21 +229,19 @@
         keystrokeOnlyNotice.classList.remove("hidden");
       }
 
-      // sdpi-components v3 dispatches "sendToPropertyInspector" as a
-      // CustomEvent on the document when the plugin sends a message.
-      document.addEventListener("sendToPropertyInspector", (ev) => {
-        if (ev.detail && ev.detail.payload && ev.detail.payload.keystrokeOnly) {
-          setKeystrokeOnly();
-        }
-      });
+      // Show admin notice on Windows only
+      if (navigator.platform.indexOf("Win") !== -1) {
+        document.getElementById("adminNotice").classList.remove("hidden");
+      }
 
-      // Also listen on the websocket message channel used by sdpi-components
-      window.addEventListener("message", (event) => {
-        const data = event.data;
-        if (data && data.event === "sendToPropertyInspector" && data.payload && data.payload.keystrokeOnly) {
+      // sdpi-components populates settings asynchronously, so poll briefly
+      const checkInterval = setInterval(() => {
+        if (keystrokeOnlyInput && (keystrokeOnlyInput.value === "true" || keystrokeOnlyInput.value === true)) {
           setKeystrokeOnly();
+          clearInterval(checkInterval);
         }
-      });
+      }, 150);
+      setTimeout(() => clearInterval(checkInterval), 3000);
     </script>
   </body>
 </html>

@@ -37,9 +37,6 @@ function toSendKeysNotation(prefixKey: string): string {
 }
 
 function escapeKeystroke(keystroke: string): string {
-  if (keystroke.length === 1 && SPECIAL_KEYS[keystroke]) {
-    return SPECIAL_KEYS[keystroke];
-  }
   if (SPECIAL_KEYS[keystroke]) {
     return SPECIAL_KEYS[keystroke];
   }
@@ -53,18 +50,41 @@ export async function sendKeystrokeWindows(
   const prefix = toSendKeysNotation(prefixKey);
   const key = escapeKeystroke(keystroke);
 
+  // Strategy: capture the current foreground window handle immediately,
+  // then re-focus it before sending keys. This ensures keystrokes go to
+  // whatever window was active when the Stream Deck button was pressed,
+  // even if PowerShell briefly steals focus during startup.
   const psScript = `
+Add-Type @'
+using System;
+using System.Runtime.InteropServices;
+public class Win32 {
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetForegroundWindow();
+    [DllImport("user32.dll")]
+    public static extern bool SetForegroundWindow(IntPtr hWnd);
+}
+'@
+
 Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.SendKeys]::SendWait("${prefix}")
+
+$target = [Win32]::GetForegroundWindow()
+if ($target -eq [IntPtr]::Zero) {
+    Write-Error "No foreground window found"
+    exit 1
+}
+[Win32]::SetForegroundWindow($target) | Out-Null
 Start-Sleep -Milliseconds 50
+[System.Windows.Forms.SendKeys]::SendWait("${prefix}")
+Start-Sleep -Milliseconds 100
 [System.Windows.Forms.SendKeys]::SendWait("${key}")
 `.trim();
 
   try {
     await execFileAsync(
       "powershell",
-      ["-NoProfile", "-NonInteractive", "-Command", psScript],
-      { timeout: 5000 }
+      ["-NoProfile", "-NonInteractive", "-WindowStyle", "Hidden", "-Command", psScript],
+      { timeout: 10000, windowsHide: true }
     );
     return { success: true };
   } catch (err) {
