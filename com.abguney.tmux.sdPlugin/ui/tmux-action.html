@@ -25,9 +25,16 @@
     </style>
   </head>
   <body>
+    <sdpi-item label="Multiplexer">
+      <sdpi-select setting="multiplexer">
+        <option value="tmux">tmux</option>
+        <option value="psmux">psmux (Windows)</option>
+      </sdpi-select>
+    </sdpi-item>
+
     <sdpi-item label="Command Method">
       <sdpi-select setting="commandMethod">
-        <option value="cli">CLI Command (tmux ...)</option>
+        <option value="cli">CLI Command</option>
         <option value="keystroke">Keystroke Simulation</option>
       </sdpi-select>
     </sdpi-item>
@@ -41,10 +48,10 @@
       ></sdpi-textfield>
     </sdpi-item>
 
-    <sdpi-item label="tmux Path">
+    <sdpi-item label="Executable Path">
       <sdpi-textfield
         setting="tmuxPath"
-        placeholder="tmux (auto-detected)"
+        placeholder="Auto-detected (tmux or psmux)"
       ></sdpi-textfield>
     </sdpi-item>
 
@@ -55,7 +62,7 @@
       ></sdpi-textfield>
     </sdpi-item>
 
-    <sdpi-item label="Target Session (-t)">
+    <sdpi-item id="targetSessionItem" label="Target Session (-t)">
       <sdpi-textfield
         setting="targetSession"
         placeholder="Auto-detected from ~/.psmux/last_session"

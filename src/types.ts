@@ -1,4 +1,5 @@
 export type TmuxActionSettings = {
+  multiplexer?: "tmux" | "psmux";
   commandMethod?: "cli" | "keystroke";
   customCommand?: string;
   prefixKey?: string;

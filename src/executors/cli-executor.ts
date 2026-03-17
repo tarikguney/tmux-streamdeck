@@ -25,19 +25,31 @@ function resolveTargetSession(targetSession?: string): string | undefined {
   return undefined;
 }
 
+function detectMultiplexer(): "tmux" | "psmux" {
+  const psmuxDir = join(homedir(), ".psmux");
+  return existsSync(psmuxDir) ? "psmux" : "tmux";
+}
+
 export async function executeTmuxCommand(
   command: string,
   tmuxPath?: string,
   socketPath?: string,
   targetSession?: string,
-  useWsl?: boolean
+  useWsl?: boolean,
+  multiplexer?: "tmux" | "psmux"
 ): Promise<CommandResult> {
-  const tmux = tmuxPath ?? "tmux";
+  const mux = multiplexer ?? detectMultiplexer();
+  const tmux = tmuxPath ?? (mux === "psmux" ? "psmux" : "tmux");
   const commandArgs = command.split(/\s+/);
-  const session = resolveTargetSession(targetSession);
 
   const socketArgs = socketPath ? ["-S", socketPath] : [];
-  const sessionArgs = session ? ["-t", session] : [];
+
+  // psmux requires -t <session> when TMUX env var is not set
+  const sessionArgs =
+    mux === "psmux" ? (() => {
+      const session = resolveTargetSession(targetSession);
+      return session ? ["-t", session] : [];
+    })() : [];
 
   let cmd: string;
   let cmdArgs: string[];
@@ -55,16 +67,18 @@ export async function executeTmuxCommand(
     return { success: true };
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
-    return { success: false, error: `tmux command failed: ${message}` };
+    return { success: false, error: `${mux} command failed: ${message}` };
   }
 }
 
 export async function checkTmuxAvailable(
   tmuxPath?: string,
   socketPath?: string,
-  useWsl?: boolean
+  useWsl?: boolean,
+  multiplexer?: "tmux" | "psmux"
 ): Promise<boolean> {
-  const tmux = tmuxPath ?? "tmux";
+  const mux = multiplexer ?? detectMultiplexer();
+  const tmux = tmuxPath ?? (mux === "psmux" ? "psmux" : "tmux");
   const socketArgs = socketPath ? ["-S", socketPath] : [];
 
   let cmd: string;

@@ -1,6 +1,7 @@
-import streamDeck, { SingletonAction, type KeyDownEvent } from "@elgato/streamdeck";
+import streamDeck, { SingletonAction, type KeyDownEvent, type WillAppearEvent } from "@elgato/streamdeck";
 import { executeTmuxCommand } from "../executors/cli-executor";
 import { executeKeystroke } from "../executors/keystroke-executor";
+import { isWindows } from "../platform/platform";
 import type { TmuxActionConfig, TmuxActionSettings } from "../types";
 
 export class TmuxAction extends SingletonAction {
@@ -11,6 +12,16 @@ export class TmuxAction extends SingletonAction {
     this.#config = config;
   }
 
+  override async onWillAppear(ev: WillAppearEvent<TmuxActionSettings>): Promise<void> {
+    const settings = ev.payload.settings;
+
+    // Auto-select multiplexer based on OS if not explicitly set
+    if (!settings.multiplexer) {
+      const defaultMux = isWindows ? "psmux" : "tmux";
+      await ev.action.setSettings({ ...settings, multiplexer: defaultMux });
+    }
+  }
+
   override async onKeyDown(ev: KeyDownEvent<TmuxActionSettings>): Promise<void> {
     const settings = ev.payload.settings;
     const method = settings.commandMethod ?? "cli";
@@ -19,7 +30,7 @@ export class TmuxAction extends SingletonAction {
 
     if (method === "cli") {
       const cmd = settings.customCommand ?? this.#config.defaultCliCommand;
-      result = await executeTmuxCommand(cmd, settings.tmuxPath, settings.socketPath, settings.targetSession, settings.useWsl);
+      result = await executeTmuxCommand(cmd, settings.tmuxPath, settings.socketPath, settings.targetSession, settings.useWsl, settings.multiplexer);
     } else {
       if (!this.#config.defaultKeystroke) {
         await ev.action.showAlert();
