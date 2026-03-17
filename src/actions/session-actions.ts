@@ -1,11 +1,11 @@
 import { action } from "@elgato/streamdeck";
 import { TmuxAction } from "./tmux-action";
 
-@action({ UUID: "com.abguney.tmux.new-session" })
+@action({ UUID: "com.tarikguney.tmux.new-session" })
 export class NewSessionAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.new-session",
+      uuid: "com.tarikguney.tmux.new-session",
       defaultCliCommand: "new-session -d",
       defaultKeystroke: "",
       category: "session",
@@ -14,11 +14,11 @@ export class NewSessionAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.detach" })
+@action({ UUID: "com.tarikguney.tmux.detach" })
 export class DetachAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.detach",
+      uuid: "com.tarikguney.tmux.detach",
       defaultCliCommand: "detach-client",
       defaultKeystroke: "d",
       category: "session",
@@ -27,11 +27,11 @@ export class DetachAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.switch-session" })
+@action({ UUID: "com.tarikguney.tmux.switch-session" })
 export class SwitchSessionAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.switch-session",
+      uuid: "com.tarikguney.tmux.switch-session",
       defaultCliCommand: "choose-session",
       defaultKeystroke: "s",
       category: "session",
@@ -40,11 +40,11 @@ export class SwitchSessionAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.rename-session" })
+@action({ UUID: "com.tarikguney.tmux.rename-session" })
 export class RenameSessionAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.rename-session",
+      uuid: "com.tarikguney.tmux.rename-session",
       defaultCliCommand: "rename-session",
       defaultKeystroke: "$",
       category: "session",
@@ -54,11 +54,11 @@ export class RenameSessionAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.kill-session" })
+@action({ UUID: "com.tarikguney.tmux.kill-session" })
 export class KillSessionAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.kill-session",
+      uuid: "com.tarikguney.tmux.kill-session",
       defaultCliCommand: "kill-session",
       defaultKeystroke: "",
       category: "session",

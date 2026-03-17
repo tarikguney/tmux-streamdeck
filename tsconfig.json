@@ -7,7 +7,7 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "outDir": "./com.abguney.tmux.sdPlugin/bin",
+    "outDir": "./com.tarikguney.tmux.sdPlugin/bin",
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,

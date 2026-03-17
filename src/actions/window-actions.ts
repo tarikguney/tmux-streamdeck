@@ -1,11 +1,11 @@
 import { action } from "@elgato/streamdeck";
 import { TmuxAction } from "./tmux-action";
 
-@action({ UUID: "com.abguney.tmux.new-window" })
+@action({ UUID: "com.tarikguney.tmux.new-window" })
 export class NewWindowAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.new-window",
+      uuid: "com.tarikguney.tmux.new-window",
       defaultCliCommand: "new-window",
       defaultKeystroke: "c",
       category: "window",
@@ -14,11 +14,11 @@ export class NewWindowAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.close-window" })
+@action({ UUID: "com.tarikguney.tmux.close-window" })
 export class CloseWindowAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.close-window",
+      uuid: "com.tarikguney.tmux.close-window",
       defaultCliCommand: "kill-window",
       defaultKeystroke: "&",
       category: "window",
@@ -27,11 +27,11 @@ export class CloseWindowAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.next-window" })
+@action({ UUID: "com.tarikguney.tmux.next-window" })
 export class NextWindowAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.next-window",
+      uuid: "com.tarikguney.tmux.next-window",
       defaultCliCommand: "next-window",
       defaultKeystroke: "n",
       category: "window",
@@ -40,11 +40,11 @@ export class NextWindowAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.prev-window" })
+@action({ UUID: "com.tarikguney.tmux.prev-window" })
 export class PrevWindowAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.prev-window",
+      uuid: "com.tarikguney.tmux.prev-window",
       defaultCliCommand: "previous-window",
       defaultKeystroke: "p",
       category: "window",
@@ -53,11 +53,11 @@ export class PrevWindowAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.rename-window" })
+@action({ UUID: "com.tarikguney.tmux.rename-window" })
 export class RenameWindowAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.rename-window",
+      uuid: "com.tarikguney.tmux.rename-window",
       defaultCliCommand: "rename-window",
       defaultKeystroke: ",",
       category: "window",

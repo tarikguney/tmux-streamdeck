@@ -2,11 +2,11 @@
   "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
   "Name": "tmux Shortcuts",
   "Version": "1.0.0.0",
-  "Author": "abguney",
+  "Author": "tarikguney",
   "Description": "Control tmux sessions, windows, and panes from your Stream Deck",
   "Icon": "imgs/plugin/tmux-plugin",
-  "URL": "https://github.com/abguney/tmux-streamdeck",
-  "UUID": "com.abguney.tmux",
+  "URL": "https://github.com/tarikguney/tmux-streamdeck",
+  "UUID": "com.tarikguney.tmux",
   "SDKVersion": 2,
   "Software": {
     "MinimumVersion": "6.5"
@@ -31,7 +31,7 @@
   "CategoryIcon": "imgs/plugin/tmux-category",
   "Actions": [
     {
-      "UUID": "com.abguney.tmux.new-window",
+      "UUID": "com.tarikguney.tmux.new-window",
       "Name": "New Window",
       "Icon": "imgs/actions/new-window",
       "Tooltip": "Create a new tmux window",
@@ -39,7 +39,7 @@
       "States": [{ "Image": "imgs/states/new-window" }]
     },
     {
-      "UUID": "com.abguney.tmux.close-window",
+      "UUID": "com.tarikguney.tmux.close-window",
       "Name": "Close Window",
       "Icon": "imgs/actions/close-window",
       "Tooltip": "Close the current tmux window",
@@ -47,7 +47,7 @@
       "States": [{ "Image": "imgs/states/close-window" }]
     },
     {
-      "UUID": "com.abguney.tmux.next-window",
+      "UUID": "com.tarikguney.tmux.next-window",
       "Name": "Next Window",
       "Icon": "imgs/actions/next-window",
       "Tooltip": "Switch to the next tmux window",
@@ -55,7 +55,7 @@
       "States": [{ "Image": "imgs/states/next-window" }]
     },
     {
-      "UUID": "com.abguney.tmux.prev-window",
+      "UUID": "com.tarikguney.tmux.prev-window",
       "Name": "Previous Window",
       "Icon": "imgs/actions/prev-window",
       "Tooltip": "Switch to the previous tmux window",
@@ -63,7 +63,7 @@
       "States": [{ "Image": "imgs/states/prev-window" }]
     },
     {
-      "UUID": "com.abguney.tmux.rename-window",
+      "UUID": "com.tarikguney.tmux.rename-window",
       "Name": "Rename Window",
       "Icon": "imgs/actions/rename-window",
       "Tooltip": "Rename the current tmux window",
@@ -71,7 +71,7 @@
       "States": [{ "Image": "imgs/states/rename-window" }]
     },
     {
-      "UUID": "com.abguney.tmux.split-h",
+      "UUID": "com.tarikguney.tmux.split-h",
       "Name": "Split Horizontal",
       "Icon": "imgs/actions/split-h",
       "Tooltip": "Split the current pane horizontally",
@@ -79,7 +79,7 @@
       "States": [{ "Image": "imgs/states/split-h" }]
     },
     {
-      "UUID": "com.abguney.tmux.split-v",
+      "UUID": "com.tarikguney.tmux.split-v",
       "Name": "Split Vertical",
       "Icon": "imgs/actions/split-v",
       "Tooltip": "Split the current pane vertically",
@@ -87,7 +87,7 @@
       "States": [{ "Image": "imgs/states/split-v" }]
     },
     {
-      "UUID": "com.abguney.tmux.close-pane",
+      "UUID": "com.tarikguney.tmux.close-pane",
       "Name": "Close Pane",
       "Icon": "imgs/actions/close-pane",
       "Tooltip": "Close the current tmux pane",
@@ -95,7 +95,7 @@
       "States": [{ "Image": "imgs/states/close-pane" }]
     },
     {
-      "UUID": "com.abguney.tmux.pane-up",
+      "UUID": "com.tarikguney.tmux.pane-up",
       "Name": "Pane Up",
       "Icon": "imgs/actions/pane-up",
       "Tooltip": "Navigate to the pane above",
@@ -103,7 +103,7 @@
       "States": [{ "Image": "imgs/states/pane-up" }]
     },
     {
-      "UUID": "com.abguney.tmux.pane-down",
+      "UUID": "com.tarikguney.tmux.pane-down",
       "Name": "Pane Down",
       "Icon": "imgs/actions/pane-down",
       "Tooltip": "Navigate to the pane below",
@@ -111,7 +111,7 @@
       "States": [{ "Image": "imgs/states/pane-down" }]
     },
     {
-      "UUID": "com.abguney.tmux.pane-left",
+      "UUID": "com.tarikguney.tmux.pane-left",
       "Name": "Pane Left",
       "Icon": "imgs/actions/pane-left",
       "Tooltip": "Navigate to the pane on the left",
@@ -119,7 +119,7 @@
       "States": [{ "Image": "imgs/states/pane-left" }]
     },
     {
-      "UUID": "com.abguney.tmux.pane-right",
+      "UUID": "com.tarikguney.tmux.pane-right",
       "Name": "Pane Right",
       "Icon": "imgs/actions/pane-right",
       "Tooltip": "Navigate to the pane on the right",
@@ -127,7 +127,7 @@
       "States": [{ "Image": "imgs/states/pane-right" }]
     },
     {
-      "UUID": "com.abguney.tmux.toggle-zoom",
+      "UUID": "com.tarikguney.tmux.toggle-zoom",
       "Name": "Toggle Zoom",
       "Icon": "imgs/actions/toggle-zoom",
       "Tooltip": "Toggle zoom on the current pane",
@@ -135,7 +135,7 @@
       "States": [{ "Image": "imgs/states/toggle-zoom" }]
     },
     {
-      "UUID": "com.abguney.tmux.new-session",
+      "UUID": "com.tarikguney.tmux.new-session",
       "Name": "New Session",
       "Icon": "imgs/actions/new-session",
       "Tooltip": "Create a new tmux session",
@@ -143,7 +143,7 @@
       "States": [{ "Image": "imgs/states/new-session" }]
     },
     {
-      "UUID": "com.abguney.tmux.detach",
+      "UUID": "com.tarikguney.tmux.detach",
       "Name": "Detach",
       "Icon": "imgs/actions/detach",
       "Tooltip": "Detach from the current tmux session",
@@ -151,7 +151,7 @@
       "States": [{ "Image": "imgs/states/detach" }]
     },
     {
-      "UUID": "com.abguney.tmux.switch-session",
+      "UUID": "com.tarikguney.tmux.switch-session",
       "Name": "Switch Session",
       "Icon": "imgs/actions/switch-session",
       "Tooltip": "Choose and switch to another tmux session",
@@ -159,7 +159,7 @@
       "States": [{ "Image": "imgs/states/switch-session" }]
     },
     {
-      "UUID": "com.abguney.tmux.rename-session",
+      "UUID": "com.tarikguney.tmux.rename-session",
       "Name": "Rename Session",
       "Icon": "imgs/actions/rename-session",
       "Tooltip": "Rename the current tmux session",
@@ -167,7 +167,7 @@
       "States": [{ "Image": "imgs/states/rename-session" }]
     },
     {
-      "UUID": "com.abguney.tmux.kill-session",
+      "UUID": "com.tarikguney.tmux.kill-session",
       "Name": "Kill Session",
       "Icon": "imgs/actions/kill-session",
       "Tooltip": "Kill the current tmux session",
@@ -175,7 +175,7 @@
       "States": [{ "Image": "imgs/states/kill-session" }]
     },
     {
-      "UUID": "com.abguney.tmux.copy-mode",
+      "UUID": "com.tarikguney.tmux.copy-mode",
       "Name": "Copy Mode",
       "Icon": "imgs/actions/copy-mode",
       "Tooltip": "Enter tmux copy mode",
@@ -183,7 +183,7 @@
       "States": [{ "Image": "imgs/states/copy-mode" }]
     },
     {
-      "UUID": "com.abguney.tmux.command-prompt",
+      "UUID": "com.tarikguney.tmux.command-prompt",
       "Name": "Command Prompt",
       "Icon": "imgs/actions/command-prompt",
       "Tooltip": "Open the tmux command prompt",
@@ -191,7 +191,7 @@
       "States": [{ "Image": "imgs/states/command-prompt" }]
     },
     {
-      "UUID": "com.abguney.tmux.reload-config",
+      "UUID": "com.tarikguney.tmux.reload-config",
       "Name": "Reload Config",
       "Icon": "imgs/actions/reload-config",
       "Tooltip": "Reload tmux configuration from ~/.tmux.conf",

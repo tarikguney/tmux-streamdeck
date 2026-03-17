@@ -7,8 +7,8 @@ You are helping test and iterate on a Stream Deck plugin for tmux shortcuts. The
 - **Repo**: https://github.com/tarikguney/tmux-streamdeck
 - **SDK**: Elgato Stream Deck SDK v2 (Node.js 20 / TypeScript)
 - **Build tool**: Rollup
-- **Plugin UUID**: `com.abguney.tmux`
-- **Plugin directory**: `com.abguney.tmux.sdPlugin/`
+- **Plugin UUID**: `com.tarikguney.tmux`
+- **Plugin directory**: `com.tarikguney.tmux.sdPlugin/`
 
 ## Step 1: Clone and Build
 
@@ -19,18 +19,18 @@ npm install
 npm run build
 ```
 
-Verify `com.abguney.tmux.sdPlugin/bin/plugin.js` exists after build.
+Verify `com.tarikguney.tmux.sdPlugin/bin/plugin.js` exists after build.
 
 ## Step 2: Link Plugin to Stream Deck
 
 ```bash
-npx @elgato/cli link com.abguney.tmux.sdPlugin
+npx @elgato/cli link com.tarikguney.tmux.sdPlugin
 ```
 
 This symlinks the plugin into the Stream Deck app's plugin directory. The Stream Deck app must be running. After linking, restart the Stream Deck app or run:
 
 ```bash
-npx @elgato/cli restart com.abguney.tmux
+npx @elgato/cli restart com.tarikguney.tmux
 ```
 
 ## Step 3: Verify in Stream Deck App
@@ -76,8 +76,8 @@ If tmux runs under WSL:
 ## Step 5: View Logs
 
 Plugin logs are in:
-- **macOS**: `~/Library/Logs/ElgatoStreamDeck/com.abguney.tmux`
-- **Windows**: `%APPDATA%\Elgato\StreamDeck\logs\com.abguney.tmux`
+- **macOS**: `~/Library/Logs/ElgatoStreamDeck/com.tarikguney.tmux`
+- **Windows**: `%APPDATA%\Elgato\StreamDeck\logs\com.tarikguney.tmux`
 
 Or enable debug mode in `manifest.json` (already enabled):
 ```json
@@ -97,7 +97,7 @@ npm run watch
 This rebuilds on file changes. After each rebuild, restart the plugin:
 
 ```bash
-npx @elgato/cli restart com.abguney.tmux
+npx @elgato/cli restart com.tarikguney.tmux
 ```
 
 ## Architecture Quick Reference
@@ -113,8 +113,8 @@ npx @elgato/cli restart com.abguney.tmux
 | `src/executors/keystroke-executor.ts` | Dispatches to macOS or Windows keystroke sender |
 | `src/platform/macos-keys.ts` | AppleScript keystroke simulation |
 | `src/platform/windows-keys.ts` | PowerShell SendKeys simulation |
-| `com.abguney.tmux.sdPlugin/manifest.json` | Plugin manifest (all 21 actions defined here) |
-| `com.abguney.tmux.sdPlugin/ui/tmux-action.html` | Shared Property Inspector UI |
+| `com.tarikguney.tmux.sdPlugin/manifest.json` | Plugin manifest (all 21 actions defined here) |
+| `com.tarikguney.tmux.sdPlugin/ui/tmux-action.html` | Shared Property Inspector UI |
 
 ## Known Issues / Things to Watch For
 
@@ -128,7 +128,7 @@ npx @elgato/cli restart com.abguney.tmux
 When ready to distribute:
 
 ```bash
-npx @elgato/cli pack com.abguney.tmux.sdPlugin
+npx @elgato/cli pack com.tarikguney.tmux.sdPlugin
 ```
 
 This creates a `.streamDeckPlugin` file that can be double-clicked to install.

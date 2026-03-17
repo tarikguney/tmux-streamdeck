@@ -56,7 +56,7 @@ npm run build
 ### Link to Stream Deck
 
 ```bash
-npx @elgato/cli link com.abguney.tmux.sdPlugin
+npx @elgato/cli link com.tarikguney.tmux.sdPlugin
 ```
 
 Restart the Stream Deck app, then find **tmux Shortcuts** in the action list.
@@ -64,7 +64,7 @@ Restart the Stream Deck app, then find **tmux Shortcuts** in the action list.
 ### Package for Distribution
 
 ```bash
-npx @elgato/cli pack com.abguney.tmux.sdPlugin
+npx @elgato/cli pack com.tarikguney.tmux.sdPlugin
 ```
 
 This creates a `.streamDeckPlugin` file that can be double-clicked to install.
@@ -103,7 +103,7 @@ npm run watch     # rebuild on file changes
 After each rebuild, restart the plugin:
 
 ```bash
-npx @elgato/cli restart com.abguney.tmux
+npx @elgato/cli restart com.tarikguney.tmux
 ```
 
 ### Project Structure
@@ -125,7 +125,7 @@ src/
   plugin.ts                 # Entry point -- registers all actions
   types.ts                  # TypeScript type definitions
 
-com.abguney.tmux.sdPlugin/
+com.tarikguney.tmux.sdPlugin/
   manifest.json             # Plugin manifest (all 20 actions defined here)
   ui/tmux-action.html       # Shared Property Inspector UI
   imgs/                     # Color-coded SVG icons by category
@@ -136,8 +136,8 @@ com.abguney.tmux.sdPlugin/
 
 | Platform | Log Location |
 |----------|-------------|
-| macOS | `~/Library/Logs/ElgatoStreamDeck/com.abguney.tmux` |
-| Windows | `%APPDATA%\Elgato\StreamDeck\logs\com.abguney.tmux` |
+| macOS | `~/Library/Logs/ElgatoStreamDeck/com.tarikguney.tmux` |
+| Windows | `%APPDATA%\Elgato\StreamDeck\logs\com.tarikguney.tmux` |
 
 Debug mode is enabled by default in `manifest.json`. Attach a Node.js debugger to inspect the plugin process.
 

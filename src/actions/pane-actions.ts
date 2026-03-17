@@ -1,11 +1,11 @@
 import { action } from "@elgato/streamdeck";
 import { TmuxAction } from "./tmux-action";
 
-@action({ UUID: "com.abguney.tmux.split-h" })
+@action({ UUID: "com.tarikguney.tmux.split-h" })
 export class SplitHorizontalAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.split-h",
+      uuid: "com.tarikguney.tmux.split-h",
       defaultCliCommand: "split-window -h",
       defaultKeystroke: "%",
       category: "pane",
@@ -14,11 +14,11 @@ export class SplitHorizontalAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.split-v" })
+@action({ UUID: "com.tarikguney.tmux.split-v" })
 export class SplitVerticalAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.split-v",
+      uuid: "com.tarikguney.tmux.split-v",
       defaultCliCommand: "split-window -v",
       defaultKeystroke: '"',
       category: "pane",
@@ -27,11 +27,11 @@ export class SplitVerticalAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.close-pane" })
+@action({ UUID: "com.tarikguney.tmux.close-pane" })
 export class ClosePaneAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.close-pane",
+      uuid: "com.tarikguney.tmux.close-pane",
       defaultCliCommand: "kill-pane",
       defaultKeystroke: "x",
       category: "pane",
@@ -40,11 +40,11 @@ export class ClosePaneAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.pane-up" })
+@action({ UUID: "com.tarikguney.tmux.pane-up" })
 export class PaneUpAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.pane-up",
+      uuid: "com.tarikguney.tmux.pane-up",
       defaultCliCommand: "select-pane -U",
       defaultKeystroke: "Up",
       category: "pane",
@@ -53,11 +53,11 @@ export class PaneUpAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.pane-down" })
+@action({ UUID: "com.tarikguney.tmux.pane-down" })
 export class PaneDownAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.pane-down",
+      uuid: "com.tarikguney.tmux.pane-down",
       defaultCliCommand: "select-pane -D",
       defaultKeystroke: "Down",
       category: "pane",
@@ -66,11 +66,11 @@ export class PaneDownAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.pane-left" })
+@action({ UUID: "com.tarikguney.tmux.pane-left" })
 export class PaneLeftAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.pane-left",
+      uuid: "com.tarikguney.tmux.pane-left",
       defaultCliCommand: "select-pane -L",
       defaultKeystroke: "Left",
       category: "pane",
@@ -79,11 +79,11 @@ export class PaneLeftAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.pane-right" })
+@action({ UUID: "com.tarikguney.tmux.pane-right" })
 export class PaneRightAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.pane-right",
+      uuid: "com.tarikguney.tmux.pane-right",
       defaultCliCommand: "select-pane -R",
       defaultKeystroke: "Right",
       category: "pane",
@@ -92,11 +92,11 @@ export class PaneRightAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.toggle-zoom" })
+@action({ UUID: "com.tarikguney.tmux.toggle-zoom" })
 export class ToggleZoomAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.toggle-zoom",
+      uuid: "com.tarikguney.tmux.toggle-zoom",
       defaultCliCommand: "resize-pane -Z",
       defaultKeystroke: "z",
       category: "pane",

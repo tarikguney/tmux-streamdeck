@@ -1,11 +1,11 @@
 import { action } from "@elgato/streamdeck";
 import { TmuxAction } from "./tmux-action";
 
-@action({ UUID: "com.abguney.tmux.copy-mode" })
+@action({ UUID: "com.tarikguney.tmux.copy-mode" })
 export class CopyModeAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.copy-mode",
+      uuid: "com.tarikguney.tmux.copy-mode",
       defaultCliCommand: "copy-mode",
       defaultKeystroke: "[",
       category: "misc",
@@ -14,11 +14,11 @@ export class CopyModeAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.command-prompt" })
+@action({ UUID: "com.tarikguney.tmux.command-prompt" })
 export class CommandPromptAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.command-prompt",
+      uuid: "com.tarikguney.tmux.command-prompt",
       defaultCliCommand: "command-prompt",
       defaultKeystroke: ":",
       category: "misc",
@@ -28,11 +28,11 @@ export class CommandPromptAction extends TmuxAction {
   }
 }
 
-@action({ UUID: "com.abguney.tmux.reload-config" })
+@action({ UUID: "com.tarikguney.tmux.reload-config" })
 export class ReloadConfigAction extends TmuxAction {
   constructor() {
     super({
-      uuid: "com.abguney.tmux.reload-config",
+      uuid: "com.tarikguney.tmux.reload-config",
       defaultCliCommand: "source-file ~/.tmux.conf",
       defaultKeystroke: "",
       category: "misc",

@@ -1,5 +1,5 @@
 {
-  "name": "com.abguney.tmux",
+  "name": "com.tarikguney.tmux",
   "version": "1.0.0",
   "description": "Stream Deck plugin for tmux shortcuts",
   "type": "module",

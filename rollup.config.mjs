@@ -5,7 +5,7 @@ import typescript from "@rollup/plugin-typescript";
 export default {
   input: "src/plugin.ts",
   output: {
-    file: "com.abguney.tmux.sdPlugin/bin/plugin.js",
+    file: "com.tarikguney.tmux.sdPlugin/bin/plugin.js",
     format: "esm",
     sourcemap: true,
   },
