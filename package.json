@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "rollup -c",
-    "watch": "rollup -c -w"
+    "watch": "rollup -c -w",
+    "pack": "npx @elgato/cli pack com.tarikguney.tmux.sdPlugin"
   },
   "dependencies": {
     "@elgato/streamdeck": "^2.0.0"
@@ -16,6 +17,7 @@
     "@rollup/plugin-typescript": "^12.1.0",
     "@types/node": "^25.5.0",
     "rollup": "^4.28.0",
+    "sharp": "^0.34.5",
     "tslib": "^2.8.0",
     "typescript": "^5.7.0"
   }

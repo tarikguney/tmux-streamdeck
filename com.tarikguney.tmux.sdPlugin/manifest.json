@@ -2,8 +2,8 @@
   "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
   "Name": "tmux Shortcuts",
   "Version": "1.0.0.0",
-  "Author": "tarikguney",
-  "Description": "Control tmux sessions, windows, and panes from your Stream Deck",
+  "Author": "Tarik Guney",
+  "Description": "Control tmux directly from your Stream Deck with 21 actions for managing sessions, windows, and panes. Supports both CLI commands and keystroke simulation, with full cross-platform support for macOS and Windows (including WSL and psmux).",
   "Icon": "imgs/plugin/tmux-plugin",
   "URL": "https://github.com/tarikguney/tmux-streamdeck",
   "UUID": "com.tarikguney.tmux",
@@ -23,7 +23,7 @@
   ],
   "Nodejs": {
     "Version": "20",
-    "Debug": "enabled"
+    "Debug": "disabled"
   },
   "CodePath": "bin/plugin.js",
   "PropertyInspectorPath": "ui/tmux-action.html",
@@ -35,168 +35,294 @@
       "Name": "New Window",
       "Icon": "imgs/actions/new-window",
       "Tooltip": "Create a new tmux window",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/new-window" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/new-window"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.close-window",
       "Name": "Close Window",
       "Icon": "imgs/actions/close-window",
       "Tooltip": "Close the current tmux window",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/close-window" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/close-window"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.next-window",
       "Name": "Next Window",
       "Icon": "imgs/actions/next-window",
       "Tooltip": "Switch to the next tmux window",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/next-window" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/next-window"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.prev-window",
       "Name": "Previous Window",
       "Icon": "imgs/actions/prev-window",
       "Tooltip": "Switch to the previous tmux window",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/prev-window" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/prev-window"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.rename-window",
       "Name": "Rename Window",
       "Icon": "imgs/actions/rename-window",
       "Tooltip": "Rename the current tmux window",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/rename-window" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/rename-window"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.split-h",
       "Name": "Split Horizontal",
       "Icon": "imgs/actions/split-h",
       "Tooltip": "Split the current pane horizontally",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/split-h" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/split-h"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.split-v",
       "Name": "Split Vertical",
       "Icon": "imgs/actions/split-v",
       "Tooltip": "Split the current pane vertically",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/split-v" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/split-v"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.close-pane",
       "Name": "Close Pane",
       "Icon": "imgs/actions/close-pane",
       "Tooltip": "Close the current tmux pane",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/close-pane" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/close-pane"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.pane-up",
       "Name": "Pane Up",
       "Icon": "imgs/actions/pane-up",
       "Tooltip": "Navigate to the pane above",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/pane-up" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/pane-up"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.pane-down",
       "Name": "Pane Down",
       "Icon": "imgs/actions/pane-down",
       "Tooltip": "Navigate to the pane below",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/pane-down" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/pane-down"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.pane-left",
       "Name": "Pane Left",
       "Icon": "imgs/actions/pane-left",
       "Tooltip": "Navigate to the pane on the left",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/pane-left" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/pane-left"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.pane-right",
       "Name": "Pane Right",
       "Icon": "imgs/actions/pane-right",
       "Tooltip": "Navigate to the pane on the right",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/pane-right" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/pane-right"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.toggle-zoom",
       "Name": "Toggle Zoom",
       "Icon": "imgs/actions/toggle-zoom",
       "Tooltip": "Toggle zoom on the current pane",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/toggle-zoom" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/toggle-zoom"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.new-session",
       "Name": "New Session",
       "Icon": "imgs/actions/new-session",
       "Tooltip": "Create a new tmux session",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/new-session" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/new-session"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.detach",
       "Name": "Detach",
       "Icon": "imgs/actions/detach",
       "Tooltip": "Detach from the current tmux session",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/detach" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/detach"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.switch-session",
       "Name": "Switch Session",
       "Icon": "imgs/actions/switch-session",
       "Tooltip": "Choose and switch to another tmux session",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/switch-session" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/switch-session"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.rename-session",
       "Name": "Rename Session",
       "Icon": "imgs/actions/rename-session",
       "Tooltip": "Rename the current tmux session",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/rename-session" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/rename-session"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.kill-session",
       "Name": "Kill Session",
       "Icon": "imgs/actions/kill-session",
       "Tooltip": "Kill the current tmux session",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/kill-session" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/kill-session"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.copy-mode",
       "Name": "Copy Mode",
       "Icon": "imgs/actions/copy-mode",
       "Tooltip": "Enter tmux copy mode",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/copy-mode" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/copy-mode"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.command-prompt",
       "Name": "Command Prompt",
       "Icon": "imgs/actions/command-prompt",
       "Tooltip": "Open the tmux command prompt",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/command-prompt" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/command-prompt"
+        }
+      ]
     },
     {
       "UUID": "com.tarikguney.tmux.reload-config",
       "Name": "Reload Config",
       "Icon": "imgs/actions/reload-config",
       "Tooltip": "Reload tmux configuration from ~/.tmux.conf",
-      "Controllers": ["Keypad"],
-      "States": [{ "Image": "imgs/states/reload-config" }]
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/states/reload-config"
+        }
+      ]
     }
   ]
 }

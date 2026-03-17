@@ -1,3 +1,6 @@
 node_modules/
 com.tarikguney.tmux.sdPlugin/bin/
+com.tarikguney.tmux.sdPlugin/logs/
 *.js.map
+*.streamDeckPlugin
+marketplace-app-icon-288x288.png
