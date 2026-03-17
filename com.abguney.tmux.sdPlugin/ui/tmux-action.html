@@ -44,7 +44,21 @@
     <sdpi-item label="tmux Path">
       <sdpi-textfield
         setting="tmuxPath"
-        placeholder="tmux"
+        placeholder="tmux (auto-detected)"
+      ></sdpi-textfield>
+    </sdpi-item>
+
+    <sdpi-item label="Socket Path (-S)">
+      <sdpi-textfield
+        setting="socketPath"
+        placeholder="Optional"
+      ></sdpi-textfield>
+    </sdpi-item>
+
+    <sdpi-item label="Target Session (-t)">
+      <sdpi-textfield
+        setting="targetSession"
+        placeholder="Auto-detected from ~/.psmux/last_session"
       ></sdpi-textfield>
     </sdpi-item>
 

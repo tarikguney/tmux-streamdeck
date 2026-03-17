@@ -3,6 +3,8 @@ export type TmuxActionSettings = {
   customCommand?: string;
   prefixKey?: string;
   tmuxPath?: string;
+  socketPath?: string;
+  targetSession?: string;
   useWsl?: boolean;
   [key: string]: string | boolean | undefined;
 };

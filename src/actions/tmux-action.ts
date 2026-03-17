@@ -19,7 +19,7 @@ export class TmuxAction extends SingletonAction {
 
     if (method === "cli") {
       const cmd = settings.customCommand ?? this.#config.defaultCliCommand;
-      result = await executeTmuxCommand(cmd, settings.tmuxPath, settings.useWsl);
+      result = await executeTmuxCommand(cmd, settings.tmuxPath, settings.socketPath, settings.targetSession, settings.useWsl);
     } else {
       if (!this.#config.defaultKeystroke) {
         await ev.action.showAlert();
