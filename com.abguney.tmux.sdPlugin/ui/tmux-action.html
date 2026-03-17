@@ -22,64 +22,177 @@
         margin-bottom: 4px;
         padding: 0 16px;
       }
+      .field-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .field-row sdpi-textfield,
+      .field-row sdpi-select,
+      .field-row sdpi-checkbox {
+        flex: 1;
+        min-width: 0;
+      }
+      .info-btn {
+        position: relative;
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        font-size: 10px;
+        font-weight: bold;
+        font-style: normal;
+        color: #787878;
+        border: 1px solid #606060;
+        border-radius: 50%;
+        cursor: pointer;
+        user-select: none;
+        background: transparent;
+      }
+      .info-btn:hover {
+        color: #ddd;
+        border-color: #aaa;
+        background: #444;
+      }
+      .info-popup {
+        display: none;
+        position: absolute;
+        bottom: calc(100% + 8px);
+        right: -8px;
+        background: #3b3b3b;
+        color: #ddd;
+        font-size: 11px;
+        font-weight: normal;
+        line-height: 1.4;
+        padding: 8px 10px;
+        border-radius: 6px;
+        border: 1px solid #555;
+        width: 230px;
+        white-space: normal;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      }
+      .info-popup::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        right: 12px;
+        border: 6px solid transparent;
+        border-top-color: #555;
+      }
+      .info-popup.below {
+        bottom: auto;
+        top: calc(100% + 8px);
+      }
+      .info-popup.below::after {
+        top: auto;
+        bottom: 100%;
+        border-top-color: transparent;
+        border-bottom-color: #555;
+      }
+      .info-btn:hover .info-popup,
+      .info-btn.active .info-popup {
+        display: block;
+      }
     </style>
   </head>
   <body>
     <sdpi-item label="Multiplexer">
-      <sdpi-select setting="multiplexer">
-        <option value="tmux">tmux</option>
-        <option value="psmux">psmux (Windows)</option>
-      </sdpi-select>
+      <div class="field-row">
+        <sdpi-select setting="multiplexer">
+          <option value="tmux">tmux</option>
+          <option value="psmux">psmux (Windows)</option>
+        </sdpi-select>
+        <span class="info-btn" onclick="this.classList.toggle('active')">i
+          <span class="info-popup below">Choose which terminal multiplexer you use. Select <b>psmux</b> if you're on Windows, or <b>tmux</b> for macOS/Linux. This is auto-detected based on your OS.</span>
+        </span>
+      </div>
     </sdpi-item>
 
     <sdpi-item label="Command Method">
-      <sdpi-select setting="commandMethod">
-        <option value="cli">CLI Command</option>
-        <option value="keystroke">Keystroke Simulation</option>
-      </sdpi-select>
+      <div class="field-row">
+        <sdpi-select setting="commandMethod">
+          <option value="cli">CLI Command</option>
+          <option value="keystroke">Keystroke Simulation</option>
+        </sdpi-select>
+        <span class="info-btn" onclick="this.classList.toggle('active')">i
+          <span class="info-popup below"><b>CLI Command</b> runs commands directly and is the most reliable method. <b>Keystroke Simulation</b> sends keyboard shortcuts to the focused terminal window.</span>
+        </span>
+      </div>
     </sdpi-item>
 
     <div class="section-header">CLI Settings</div>
 
     <sdpi-item label="Custom Command">
-      <sdpi-textfield
-        setting="customCommand"
-        placeholder="Leave empty for default"
-      ></sdpi-textfield>
+      <div class="field-row">
+        <sdpi-textfield
+          setting="customCommand"
+          placeholder="Leave empty for default"
+        ></sdpi-textfield>
+        <span class="info-btn" onclick="this.classList.toggle('active')">i
+          <span class="info-popup">Override the default command for this button. For example, enter <b>split-window -v</b> to split vertically. Leave empty to use the built-in default.</span>
+        </span>
+      </div>
     </sdpi-item>
 
     <sdpi-item label="Executable Path">
-      <sdpi-textfield
-        setting="tmuxPath"
-        placeholder="Auto-detected (tmux or psmux)"
-      ></sdpi-textfield>
+      <div class="field-row">
+        <sdpi-textfield
+          setting="tmuxPath"
+          placeholder="Auto-detected (tmux or psmux)"
+        ></sdpi-textfield>
+        <span class="info-btn" onclick="this.classList.toggle('active')">i
+          <span class="info-popup">Full path to the tmux or psmux program. Only needed if it isn't found automatically on your system.</span>
+        </span>
+      </div>
     </sdpi-item>
 
-    <sdpi-item label="Socket Path (-S)">
-      <sdpi-textfield
-        setting="socketPath"
-        placeholder="Optional"
-      ></sdpi-textfield>
+    <sdpi-item label="Socket Path">
+      <div class="field-row">
+        <sdpi-textfield
+          setting="socketPath"
+          placeholder="Optional"
+        ></sdpi-textfield>
+        <span class="info-btn" onclick="this.classList.toggle('active')">i
+          <span class="info-popup">Path to a specific tmux socket file. Only needed for advanced setups with multiple tmux servers. Most users can leave this empty.</span>
+        </span>
+      </div>
     </sdpi-item>
 
-    <sdpi-item id="targetSessionItem" label="Target Session (-t)">
-      <sdpi-textfield
-        setting="targetSession"
-        placeholder="Auto-detected from ~/.psmux/last_session"
-      ></sdpi-textfield>
+    <sdpi-item label="Target Session">
+      <div class="field-row">
+        <sdpi-textfield
+          setting="targetSession"
+          placeholder="Auto-detected"
+        ></sdpi-textfield>
+        <span class="info-btn" onclick="this.classList.toggle('active')">i
+          <span class="info-popup">The name of the session to send commands to. For psmux, this is auto-detected from your last active session. Set manually if you have multiple sessions.</span>
+        </span>
+      </div>
     </sdpi-item>
 
-    <sdpi-item label="Use WSL (Windows)">
-      <sdpi-checkbox setting="useWsl"></sdpi-checkbox>
+    <sdpi-item label="Use WSL">
+      <div class="field-row">
+        <sdpi-checkbox setting="useWsl"></sdpi-checkbox>
+        <span class="info-btn" onclick="this.classList.toggle('active')">i
+          <span class="info-popup">Enable this if tmux runs inside Windows Subsystem for Linux (WSL) instead of natively on Windows. Commands will be prefixed with <b>wsl</b>.</span>
+        </span>
+      </div>
     </sdpi-item>
 
     <div class="section-header">Keystroke Settings</div>
 
     <sdpi-item label="Prefix Key">
-      <sdpi-textfield
-        setting="prefixKey"
-        placeholder="ctrl+b"
-      ></sdpi-textfield>
+      <div class="field-row">
+        <sdpi-textfield
+          setting="prefixKey"
+          placeholder="ctrl+b"
+        ></sdpi-textfield>
+        <span class="info-btn" onclick="this.classList.toggle('active')">i
+          <span class="info-popup">The tmux prefix key combination sent before each shortcut. Default is <b>Ctrl+B</b>. Change this if you've remapped your prefix (e.g. to Ctrl+A).</span>
+        </span>
+      </div>
     </sdpi-item>
   </body>
 </html>
