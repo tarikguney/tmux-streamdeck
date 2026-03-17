@@ -5,7 +5,7 @@
       <stop offset="100%" stop-color="#8E24AA"/>
     </linearGradient>
   </defs>
-  <circle cx="10" cy="10" r="7" fill="rgba(206,147,216,0.1)" stroke="url(#miscGrad)" stroke-width="1.2" stroke-dasharray="2 2"/>
-  <path d="M14.5,5.5 A6,6 0 1,0 16,10" stroke="#FFFFFF" stroke-width="2"/>
-  <polyline points="14.5,2.5 14.5,5.5 11.5,5.5" stroke="#FFFFFF" stroke-width="2"/>
+  <rect x="2" y="2" width="16" height="16" rx="2" fill="rgba(206,147,216,0.15)" stroke="url(#miscGrad)" stroke-width="1.8"/>
+  <path d="M13.5,6.5 A4.5,4.5 0 1,0 15,10" stroke="#FFFFFF" stroke-width="2"/>
+  <polyline points="13.5,3.5 13.5,6.5 10.5,6.5" stroke="#FFFFFF" stroke-width="2"/>
 </svg>
