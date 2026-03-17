@@ -1,0 +1,22 @@
+{
+  "name": "com.abguney.tmux",
+  "version": "1.0.0",
+  "description": "Stream Deck plugin for tmux shortcuts",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
+  },
+  "dependencies": {
+    "@elgato/streamdeck": "^2.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.0",
+    "@types/node": "^25.5.0",
+    "rollup": "^4.28.0",
+    "tslib": "^2.8.0",
+    "typescript": "^5.7.0"
+  }
+}

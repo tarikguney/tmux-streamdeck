@@ -1,0 +1,3 @@
+node_modules/
+com.abguney.tmux.sdPlugin/bin/
+*.js.map
