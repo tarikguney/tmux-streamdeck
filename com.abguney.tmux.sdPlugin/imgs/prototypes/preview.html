@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tmux Stream Deck — Option D Applied</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a2e; color: #e0e0e0; font-family: -apple-system, 'Segoe UI', sans-serif; padding: 40px; }
+  h1 { text-align: center; font-weight: 300; font-size: 28px; margin-bottom: 10px; color: #fff; }
+  .subtitle { text-align: center; color: #888; margin-bottom: 40px; font-size: 14px; }
+  .categories { display: flex; flex-direction: column; gap: 36px; max-width: 900px; margin: 0 auto; }
+  .category { background: #16213e; border-radius: 16px; padding: 24px; border: 1px solid #2a2a4a; }
+  .cat-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .cat-header h2 { font-size: 16px; font-weight: 600; color: #fff; }
+  .cat-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .cat-desc { color: #666; font-size: 12px; margin-bottom: 16px; }
+  .icons { display: flex; flex-wrap: wrap; gap: 14px; }
+  .icon-cell { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .icon-frame {
+    width: 72px; height: 72px; background: #0f0f23; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid #2a2a4a; transition: transform 0.2s;
+  }
+  .icon-frame:hover { transform: scale(1.15); }
+  .icon-frame img { width: 40px; height: 40px; }
+  .icon-label { font-size: 9px; color: #555; text-align: center; max-width: 72px; }
+</style>
+</head>
+<body>
+
+<h1>tmux Stream Deck — Color-Coded Icons</h1>
+<p class="subtitle">Option D applied across all 20 actions</p>
+
+<div class="categories">
+
+  <div class="category">
+    <div class="cat-header">
+      <div class="cat-dot" style="background: linear-gradient(135deg, #4FC3F7, #0288D1);"></div>
+      <h2>Window Actions</h2>
+    </div>
+    <p class="cat-desc">Blue — window management</p>
+    <div class="icons">
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/new-window.svg"></div>
+        <span class="icon-label">New Window</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/close-window.svg"></div>
+        <span class="icon-label">Close Window</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/next-window.svg"></div>
+        <span class="icon-label">Next Window</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/prev-window.svg"></div>
+        <span class="icon-label">Prev Window</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/rename-window.svg"></div>
+        <span class="icon-label">Rename Window</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="category">
+    <div class="cat-header">
+      <div class="cat-dot" style="background: linear-gradient(135deg, #81C784, #388E3C);"></div>
+      <h2>Pane Actions</h2>
+    </div>
+    <p class="cat-desc">Green — pane management</p>
+    <div class="icons">
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/split-h.svg"></div>
+        <span class="icon-label">Split Horiz</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/split-v.svg"></div>
+        <span class="icon-label">Split Vert</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/close-pane.svg"></div>
+        <span class="icon-label">Close Pane</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/pane-up.svg"></div>
+        <span class="icon-label">Pane Up</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/pane-down.svg"></div>
+        <span class="icon-label">Pane Down</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/pane-left.svg"></div>
+        <span class="icon-label">Pane Left</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/pane-right.svg"></div>
+        <span class="icon-label">Pane Right</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/toggle-zoom.svg"></div>
+        <span class="icon-label">Toggle Zoom</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="category">
+    <div class="cat-header">
+      <div class="cat-dot" style="background: linear-gradient(135deg, #FFB74D, #F57C00);"></div>
+      <h2>Session Actions</h2>
+    </div>
+    <p class="cat-desc">Orange — session management</p>
+    <div class="icons">
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/new-session.svg"></div>
+        <span class="icon-label">New Session</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/detach.svg"></div>
+        <span class="icon-label">Detach</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/switch-session.svg"></div>
+        <span class="icon-label">Switch Session</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/rename-session.svg"></div>
+        <span class="icon-label">Rename Session</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/kill-session.svg"></div>
+        <span class="icon-label">Kill Session</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="category">
+    <div class="cat-header">
+      <div class="cat-dot" style="background: linear-gradient(135deg, #CE93D8, #8E24AA);"></div>
+      <h2>Misc Actions</h2>
+    </div>
+    <p class="cat-desc">Purple — utilities</p>
+    <div class="icons">
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/copy-mode.svg"></div>
+        <span class="icon-label">Copy Mode</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/command-prompt.svg"></div>
+        <span class="icon-label">Cmd Prompt</span>
+      </div>
+      <div class="icon-cell">
+        <div class="icon-frame"><img src="../actions/reload-config.svg"></div>
+        <span class="icon-label">Reload Config</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
