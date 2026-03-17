@@ -6,13 +6,13 @@
 
 <p align="center">
   <strong>Control tmux sessions, windows, and panes from your Stream Deck.</strong><br/>
-  20 actions &bull; Windows + macOS &bull; CLI &amp; Keystroke modes
+  21 actions &bull; Windows + macOS &bull; CLI &amp; Keystroke modes
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Stream_Deck_SDK-v3-blue?style=flat-square" alt="SDK v3"/>
   <img src="https://img.shields.io/badge/Node.js-20-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node 20"/>
-  <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT License"/>
 </p>
 
@@ -21,7 +21,7 @@
 ## Actions
 
 <p align="center">
-  <img src="docs/actions-showcase.svg" alt="All 20 tmux actions" width="700"/>
+  <img src="docs/actions-showcase.svg" alt="All 21 tmux actions" width="700"/>
 </p>
 
 | Category | Actions | Color |
@@ -40,7 +40,7 @@ Each action supports two execution modes:
 
 ### Prerequisites
 
-- [Stream Deck](https://www.elgato.com/stream-deck) hardware + Stream Deck app (v6.5+)
+- [Stream Deck](https://www.elgato.com/stream-deck) hardware + Stream Deck app (v6.9+)
 - [Node.js 20](https://nodejs.org/) or later
 - [tmux](https://github.com/tmux/tmux) installed and on your PATH (or [psmux](https://github.com/nickvdyck/psmux) on Windows)
 
@@ -120,13 +120,14 @@ src/
     cli-executor.ts         # Runs tmux commands via child_process
     keystroke-executor.ts   # Dispatches to platform-specific keystroke sender
   platform/
+    platform.ts             # OS detection helpers
     macos-keys.ts           # AppleScript keystroke simulation
     windows-keys.ts         # PowerShell SendKeys simulation
   plugin.ts                 # Entry point -- registers all actions
   types.ts                  # TypeScript type definitions
 
 com.tarikguney.tmux.sdPlugin/
-  manifest.json             # Plugin manifest (all 20 actions defined here)
+  manifest.json             # Plugin manifest (all 21 actions defined here)
   ui/tmux-action.html       # Shared Property Inspector UI
   imgs/                     # Color-coded SVG icons by category
   bin/plugin.js             # Compiled output (built by Rollup)
@@ -139,7 +140,7 @@ com.tarikguney.tmux.sdPlugin/
 | macOS | `~/Library/Logs/ElgatoStreamDeck/com.tarikguney.tmux` |
 | Windows | `%APPDATA%\Elgato\StreamDeck\logs\com.tarikguney.tmux` |
 
-Debug mode is enabled by default in `manifest.json`. Attach a Node.js debugger to inspect the plugin process.
+Debug mode is disabled by default in `manifest.json`. To enable it, set `"Debug": "enabled"` and attach a Node.js debugger to inspect the plugin process.
 
 ## License
 
