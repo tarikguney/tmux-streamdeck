@@ -16,6 +16,7 @@ export interface TmuxActionConfig {
   defaultKeystroke: string;
   category: "window" | "pane" | "session" | "misc";
   displayName: string;
+  keystrokeOnly?: boolean;
 }
 
 export interface CommandResult {

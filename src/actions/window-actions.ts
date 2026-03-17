@@ -62,6 +62,7 @@ export class RenameWindowAction extends TmuxAction {
       defaultKeystroke: ",",
       category: "window",
       displayName: "Rename Window",
+      keystrokeOnly: true,
     });
   }
 }

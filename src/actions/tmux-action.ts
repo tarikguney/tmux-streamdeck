@@ -1,4 +1,4 @@
-import streamDeck, { SingletonAction, type KeyDownEvent, type WillAppearEvent } from "@elgato/streamdeck";
+import streamDeck, { SingletonAction, type KeyDownEvent, type WillAppearEvent, type PropertyInspectorDidAppearEvent } from "@elgato/streamdeck";
 import { executeTmuxCommand } from "../executors/cli-executor";
 import { executeKeystroke } from "../executors/keystroke-executor";
 import { isWindows } from "../platform/platform";
@@ -14,17 +14,32 @@ export class TmuxAction extends SingletonAction {
 
   override async onWillAppear(ev: WillAppearEvent<TmuxActionSettings>): Promise<void> {
     const settings = ev.payload.settings;
+    const updates: Partial<TmuxActionSettings> = {};
 
     // Auto-select multiplexer based on OS if not explicitly set
     if (!settings.multiplexer) {
-      const defaultMux = isWindows ? "psmux" : "tmux";
-      await ev.action.setSettings({ ...settings, multiplexer: defaultMux });
+      updates.multiplexer = isWindows ? "psmux" : "tmux";
+    }
+
+    // Force keystroke mode for interactive actions
+    if (this.#config.keystrokeOnly && settings.commandMethod !== "keystroke") {
+      updates.commandMethod = "keystroke";
+    }
+
+    if (Object.keys(updates).length > 0) {
+      await ev.action.setSettings({ ...settings, ...updates });
+    }
+  }
+
+  override async onPropertyInspectorDidAppear(ev: PropertyInspectorDidAppearEvent<TmuxActionSettings>): Promise<void> {
+    if (this.#config.keystrokeOnly) {
+      await (ev.action as any).sendToPropertyInspector({ keystrokeOnly: true });
     }
   }
 
   override async onKeyDown(ev: KeyDownEvent<TmuxActionSettings>): Promise<void> {
     const settings = ev.payload.settings;
-    const method = settings.commandMethod ?? "cli";
+    const method = this.#config.keystrokeOnly ? "keystroke" : (settings.commandMethod ?? "cli");
 
     let result;
 

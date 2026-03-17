@@ -49,6 +49,7 @@ export class RenameSessionAction extends TmuxAction {
       defaultKeystroke: "$",
       category: "session",
       displayName: "Rename Session",
+      keystrokeOnly: true,
     });
   }
 }
