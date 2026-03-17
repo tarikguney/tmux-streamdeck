@@ -7,9 +7,9 @@
   "Icon": "imgs/plugin/tmux-plugin",
   "URL": "https://github.com/tarikguney/tmux-streamdeck",
   "UUID": "com.tarikguney.tmux",
-  "SDKVersion": 2,
+  "SDKVersion": 3,
   "Software": {
-    "MinimumVersion": "6.5"
+    "MinimumVersion": "6.9"
   },
   "OS": [
     {
