@@ -1,5 +1,7 @@
+# tmux for Stream Deck
+
 <p align="center">
-  <img src="docs/banner.svg" alt="tmux for Stream Deck" width="700"/>
+  <img src="docs/banner.svg" alt="tmux for Stream Deck" width="100%"/>
 </p>
 
 <p align="center">
