@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 288" width="288" height="288">
+  <defs>
+    <!-- Outer glow -->
+    <filter id="outerGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18"/>
+    </filter>
+    <!-- Tighter inner glow -->
+    <filter id="innerGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+    </filter>
+    <clipPath id="termClip">
+      <rect x="44" y="64" width="200" height="160" rx="16"/>
+    </clipPath>
+  </defs>
+
+  <!-- Dark rounded background -->
+  <rect width="288" height="288" rx="48" fill="#0d0d1a"/>
+
+  <!-- Outer glow layer (wide, soft) -->
+  <rect x="44" y="64" width="200" height="160" rx="16" fill="#2a7a4e" opacity="0.3" filter="url(#outerGlow)"/>
+
+  <!-- Inner glow layer (tighter, brighter) -->
+  <rect x="44" y="64" width="200" height="160" rx="16" fill="#5ee87d" opacity="0.15" filter="url(#innerGlow)"/>
+
+  <!-- Terminal contents clipped to shape -->
+  <g clip-path="url(#termClip)">
+    <rect x="44" y="64" width="200" height="160" fill="#1a2332"/>
+    <rect x="44" y="64" width="200" height="36" fill="#152030"/>
+  </g>
+
+  <!-- Border drawn on top so it's even on all sides -->
+  <rect x="44" y="64" width="200" height="160" rx="16" fill="none" stroke="#2a7a4e" stroke-width="2.5"/>
+
+  <!-- Title bar dots -->
+  <circle cx="68" cy="82" r="6" fill="#e94560"/>
+  <circle cx="88" cy="82" r="6" fill="#f5a623"/>
+  <circle cx="108" cy="82" r="6" fill="#53d769"/>
+
+  <!-- Terminal prompt chevron -->
+  <polyline points="72,130 100,155 72,180" fill="none" stroke="#5ee87d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Cursor/command line -->
+  <line x1="112" y1="180" x2="208" y2="180" stroke="#5ee87d" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+</svg>
